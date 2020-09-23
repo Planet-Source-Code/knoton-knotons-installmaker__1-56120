@@ -1,0 +1,82 @@
+Knotons Installmaker
+
+It consist of three parts
+KInstaller	(makes the setup packages)
+KSetup	(Installs the setup packages)
+KUninstall	(Uninstall what has been installed)
+
+The main reason I have built this installmaker is because I was in need of an setup for easy distribution
+of a major update at work. didnt feel like spend a lot of $ on a professional one.
+I also built it because it was great fun and to see if I was able to :-)
+
+As far as I can tell it works well for the purpose it was built.
+It has great potential to be extended, feel free to do so and please share any extensions.
+
+
+Credits
+Goes to a lot of people, to many for me to remember.
+I gained the knowledge howto build it from various places and programmers.
+www.planet-source-code.com
+www.allapi.net
+and more.....
+Thank you all, open source is the best source for knowledge :-)
+
+How it works
+First you must compile all three parts into the same directory.
+
+You choose File/New in Kinstaller and gives your project the same name as the application you are
+building a setup for. That name is later being used at various places, for example the descriptive name
+in the add or remove programs applet...
+
+You add Files by choosing Action/Add files
+
+You change Destination by choose the destination in the Environ Path Variables combo, it then adds
+to the textbox there you can add any trailing folders manually. after that check all files that should have
+that destination and click Action/Change destination. Repeat until all files have the correct destination.
+
+You add Links (shortcuts) by choosing the link in the Links combo and it then adds it to the textbox there
+you manually could enter any trailing folders. After that check all files that should have that link and click
+Action/Set link
+
+Note that environ paths and links are casesensitive, DO NOT CHANGE IT.
+
+You can mark files as shared by checking them and click Action/Mark files as shared.
+This means your files wont be deleted during uninstall.
+
+You can specify if the one installing must be admin by checking the checkbox User must be admin
+
+You can specify if the one installing are allowed to choose his installationpath by checking the checkbox
+Allow user to choose %InstallationPath%
+
+You can also delete files, links, undo shared files..
+
+Finally you are set to make the setup for your application
+Click Action/Create cabinet
+The cabinet will be made and Ksetup will be copied along with it with the name of your application
+the cabinet and the renamed Ksetup file is the ones you distribute.
+
+
+system directories for installation
+
+%System32%		= Windows directory/System32
+%InstallationPath%		= Program files\ name of your application, or userspecified if allowed
+%CommonProgramFiles%	= Program files\Common Files
+%ProgramFiles%		= Program files
+%WinDir%		= Windows directory
+
+
+Special folders directories for links/shortcuts
+
+%Programs%		= Start\Programs (for current user)
+%AllUsersPrograms%	= Start\Programs (for all users)
+%AllUsersStartUp%		= Start\Programs\Startup (For all users)
+%AllUsersDesktop%	= Desktop (For all users)
+%Desktop%		= Desktop (For current user)
+%SendTo%		= Shell\SendTo (For current user)
+%StartUp%		= Start\Programs\Startup (for current user)
+%QuickLaunch%		= Puts a quicklaunch link next to the startbutton
+
+Note that you only can add trailing folders to Programs/AllusersPrograms.
+
+Hope you will enjoy it.
+Let me know what you think, Feedback is what makes me a better programmer.
